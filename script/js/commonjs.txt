@@ -1,0 +1,193 @@
+/**
+ * m首页
+ * 情封
+ * 2013-06-08
+ */
+
+define(function (require) {
+    var ue = ue || {};
+
+    require('jquery');
+    var autocomplete = require("baseAssets/js/ks.autocomplete.min.js");
+    ue.favorites = require("baseAssets/js/ks.favorites.min.js");
+
+    /*添加收藏*/
+    $("#j-favorites").click(function () {
+        var _name = "4399手机游戏 - www.4399.cn";
+        ue.favorites(_name);
+    });
+
+    //登录
+    /*if(_4399PhoneConfig.login && _4399PhoneConfig.domain =="4399.cn"){
+        require.async('loginUrl/js/phone.logincn',function(login){
+            login("j-user-menu",function(){
+                if(  $("#j-user-menu").size()>0 ){
+                    $("#j-user-menu").hover(function(){
+                        $(this).addClass("phone_menu_cur");
+                        $("#j-phone-user").show();
+                    },function(){
+                        $(this).removeClass("phone_menu_cur");
+                        $("#j-phone-user").hide();
+                    });
+                }
+            });
+        });
+    }*/
+
+
+
+    /*
+     * @m 快捷方式
+     * */
+    (function(){
+        function JudgeResolution(){
+            if( window.screen.width <=1024 ){
+                $("#j-fixedmenu").hide();
+            }else{
+                $("#j-fixedmenu").show();
+            }
+        }
+        window.onresize = function(){
+            JudgeResolution();
+        };
+        JudgeResolution();
+    })();
+
+     /*
+     * 快捷入口
+     * */
+     if($("#j-site-menu").size()>0){
+         $("#j-site-menu").hover(function(){
+             $(this).addClass("phone_menu_cur");
+             $("#j-phone-sitemap").show();
+         },function(){
+             $(this).removeClass("phone_menu_cur");
+             $("#j-phone-sitemap").hide();
+         });
+     }
+
+    /*搜索*/
+    ue.prompt = {
+        word: '',
+        data: {},
+        timer: 0,
+        input: '#j-search_input',
+        getUrl: function (word) {
+            var that = this;
+            $.ajax({
+                url:"/search-suggest.html?t="+new Date().getTime(),
+                dataType:'jsonp',
+                data:{"w":word},
+                type:"GET",
+                jsonp:'_callback_',
+                jsonpCallback:"cnSearch",
+                success:function(data) {
+                    //console.log(data);
+                    //console.log(that.data[_4399PhoneConfig.phoneUrl][word]);
+                    var _word = word;
+                    //console.log(_4399PhoneConfig.phoneType,word);
+                    that.data[_word] = data;
+                    //请求值和搜索框的一样
+                    if ($(that.input).val() == word) {
+                        that.init(word);
+                    }
+                }
+            });
+        },
+
+        init: function (word) {
+            var _that = this;
+            _that.word =  word;
+            //已经请求过了
+            if (typeof _that.data[_that.word] != 'undefined') {
+                _that.show(_that.data[_that.word]);
+                return;
+            }
+            //var word2 = _that.word.substr(1, _that.word.length - 1);
+            var word2 = _that.word;
+            //前缀词 没有结果，不再请求
+            if (word2 != '' && typeof(_that.data[word2]) != 'undefined' && _that.data[word2].length == 0) {
+                _that.data[_that.word] = [];
+                _that.show([]);
+                return;
+            }
+            clearTimeout(_that.Timer);
+            _that.Timer = setTimeout(function () {
+                _that.getUrl(_that.word);
+            }, 300);
+        }
+    };
+
+    /*
+    * 搜索关键词
+    * */
+    autocomplete({
+        form : "#j-search_form",
+        input: "#j-search_input",
+        target: "#j-prompt",
+        list: "#j-prompt .m_keyword_list",
+        items: "#j-prompt .m_keyword_list li",
+        auto: false,
+        currentClass: "hover",
+        hideonselect : true,
+        defaultvalue : ( (typeof SearchKeyWord !== "undefined") && SearchKeyWord.word) ? SearchKeyWord.word : "",//非搜索结果页并且页面有配置默认搜索词
+        placeholder:"请输入游戏名",
+        handle: function (key) {
+            var that = this;
+
+            if (ue.prompt.timer == 0) {
+                ue.prompt.show = function (res) {
+                    var _suggestHtml = '<ul class="m_keyword_list">';
+                    
+                    if($.isEmptyObject(res.result)){
+                        that.hide();
+                        return false;
+                    }
+                    
+                    $.each(res.result,function(k,val){
+                        _suggestHtml+='<li data-value="'+val.name+'"><a href="'+val.click_url+'" target="_blank"><img src="'+val.icopath+'"/>';
+                        if(val.iphone_id){
+                            _suggestHtml+='<span class="i">苹果</span>';
+                        }
+                        if(val.android_id){
+                            _suggestHtml+='<span class="a">安卓</span>';
+                        }
+                        _suggestHtml+=val.name+'</a></li>';
+                    });
+
+                    that.show(_suggestHtml);
+                }
+            }
+
+            ue.prompt.init(key);
+        },
+
+        onSelected : function(target){
+            return true;
+        },
+
+        onError : function(){
+            var that = this;
+            var $searchObj = $("#j-search");
+
+            if($searchObj.length){
+                for(var i = 0; i < 4; i++){
+                    setTimeout(function(){
+                        $searchObj.toggleClass("cn_search_error");
+                    }, 200 * i);
+                }
+            }
+
+            return false;
+        }
+
+    });
+
+    var _hdmodal = $("#j-headmodal"); 
+    $("#j-headslogan").bind("click",function(){
+        _hdmodal.css("display","block");
+    });
+    $("#j-headmodal .close").bind("click",function(){
+        _hdmodal.css("display","none");
+    });
+});

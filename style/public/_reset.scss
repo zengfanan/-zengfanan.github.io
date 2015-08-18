@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/*reset css*/
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+fieldset,img{border:none;}
+img{display: block;}
+address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}
+ul,ol{list-style:none;}
+input{padding-top:0;padding-bottom:0;font-family:SimSun,\5B8B\4F53;}
+input::-moz-focus-inner{border:none;padding:0;}
+select,input{vertical-align:middle;}
+select,input,textarea{font-size:12px;margin:0;}
+input[type="text"],input[type="password"],textarea{outline-style:none;-webkit-appearance:none;}
+textarea{resize:none;}
+table{border-collapse:collapse;}
+body{font:12px \5B8B\4F53,Arial Narrow,HELVETICA;background:#fff;-webkit-text-size-adjust:100%}
+.cf:after{content:".";display:block;height:0;visibility:hidden;clear:both;}
+.cf{zoom:1;}
+.cf{clear:both;height:0;font-size:0;overflow:hidden;}
+a{color:#666;text-decoration:none;}
+a:visited{color:#666;}
+a:hover,a:active,a:focus{color:#f40;text-decoration:underline}
+

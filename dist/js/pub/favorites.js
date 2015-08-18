@@ -1,0 +1,2 @@
+/*! pagedemo 2015-08-11 kingone */
+define("dist/js/pub/favorites",[],function(a,b,c){function d(a,b){var c=a||document.title,b=b||document.location.href;try{window.sidebar?window.sidebar.addPanel(c,b,""):window.external.AddFavorite(b,c)}catch(d){alert("您的浏览器不支持该功能,请使用Ctrl+D收藏本页")}}c.exports=d});

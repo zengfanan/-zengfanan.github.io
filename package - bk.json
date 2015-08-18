@@ -1,0 +1,23 @@
+{
+	"name": "kingone",
+	"version": "0.0.1",
+	"description": "kingone pro",
+	"devDependencies": {
+		"grunt": "*",
+		"time-grunt": "*",
+		"grunt-contrib-nodeunit": "*",
+		"grunt-banner": "*",	
+		"grunt-contrib-sass": "*",
+		"grunt-contrib-compass": "*",
+		"grunt-contrib-cssmin": "*",
+		"grunt-cmd-transport": "*",
+		"grunt-cmd-concat": "*",
+		"grunt-contrib-uglify": "*",
+		"grunt-contrib-clean": "*",
+		"grunt-contrib-copy": "*",
+		"grunt-contrib-watch": "*",
+		"grunt-contrib-compress": "*"
+	}
+}
+
+
