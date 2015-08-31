@@ -3,7 +3,7 @@
 body{font-size:12px;font-family:arial,\5B8B\4F53;}
 body,html,a,img,div,form,select,input,ul,ol,li,h1,h2,h3,h4,h5,h6,dd,dl,dt,p,label,em,span,i{margin:0;padding:0;font-style:normal}
 a{color:#3a3a3a;text-decoration:none;cursor:pointer;}
-a:hover{color:#D12B34;text-decoration:underline;cursor:pointer;}
+a:hover{color:#D12B34;text-decoration:underline;cursor:pointer;z-index:10}
 ol,ul,li{list-style:none}
 img{border:none}
 /*common*/
