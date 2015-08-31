@@ -195,7 +195,7 @@ img{border:none}
 /* area */
 .area{margin-top:8px;}
 .tit{height:50px;overflow:hidden}
-.area .bd{padding:10px 0;background:rgba(178, 223, 240, 0.9);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#e5b2dff0', EndColorStr='#e5b2dff0')}
+.area .bd{padding:10px 0;background:rgba(178, 223, 240, 0.9);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#e5b2dff0', EndColorStr='#e5b2dff0');zoom:1}
 .tit,.w322 .hd{background:url(../images/titbg.png) no-repeat}
 .tit1{background-position:0 0}
 .tit2{background-position:0 -52px}
