@@ -323,7 +323,7 @@ a:hover img{border-color:#D12B34}
 /*侧边栏*/
 .fixnav{position:fixed;left:50%;width:131px;height:437px;bottom:100px;margin-left:500px;display:inline;overflow:hidden;_position:absolute;_top:expression(documentElement.scrollTop+documentElement.clientHeight-this.offsetHeight-100);zoom:1;z-index:15}
 .fixnavbg{background:url(../images/fixnav.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="images/fixnav.png");_background:none;width:131px;height:437px;overflow:hidden}
-.fixitem{float:left;width:76px;height:298px;overflow:hidden;margin:139px 0 0 12px;overflow:hidden}
+.fixitem{float:left;width:76px;height:298px;overflow:hidden;margin:139px 0 0 12px;overflow:hidden;display:inline}
 .fixitem li{float:left}
 .fixitem a{float:left;width:76px;height:30px;text-align:center;line-height:30px;overflow:hidden;font-size:14px;color:#fff}
 .fixitem a:hover{background:#0588C8;color:#fff;text-decoration:none}
