@@ -26,6 +26,7 @@ img{border:none}
 
 /* bg mod */
 * html,* body{background-image:url(about:blank);background-attachment:fixed}
+html{_filter: expression(document.execCommand(”BackgroundImageCache”, false, true));}
 .fixbg{width:100%;overflow:hidden;position:fixed;left:0%;top:0;_position:absolute;_top:expression(documentElement.scrollTop);zoom:1;z-index:1}
 .bg1,.bg2,.bg3,.bg4,.bg5{height:200px}
 .bg1{background:url(../images/bg1.jpg) no-repeat center top}
