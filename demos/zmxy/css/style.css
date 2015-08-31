@@ -183,7 +183,7 @@ img{border:none}
 .quick-link dd a{padding:0 8px;margin:0 2px}
 
 /* hotpets */
-.hotpets{background:rgba(255, 255, 255, 0.8);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ccffffff', EndColorStr='#ccffffff');border:1px solid #B4DBED;width:978px;height:128px; margin:8px auto 0}
+.hotpets{background:rgba(255, 255, 255, 0.8);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#ccffffff', EndColorStr='#ccffffff');border:1px solid #B4DBED;width:978px;height:128px;overflow:hidden;margin:8px auto 0}
 .hotpets em{background-position:-266px -148px;float:left;width:28px;height:106px;overflow:hidden;line-height:99;margin-left:15px;display:inline;position:relative;top:-1px}
 .hotpets ul{float:left;height:108px;overflow:hidden;margin:14px 0 0 2px;display:inline;}
 .hotpets li{float:left;width:92px;height:108px;overflow:hidden;text-align:center;line-height:2;margin-left:10px;display:inline;position:relative}
@@ -195,7 +195,7 @@ img{border:none}
 /* area */
 .area{margin-top:8px;}
 .tit{height:50px;overflow:hidden}
-.area .bd{padding:10px 0;background:rgba(178, 223, 240, 0.9);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#e5b2dff0', EndColorStr='#e5b2dff0');zoom:1}
+.area .bd{padding:10px 0;background:rgba(178, 223, 240, 0.9);filter:progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr='#e5b2dff0', EndColorStr='#e5b2dff0');zoom:1;overflow:hidden;}
 .tit,.w322 .hd{background:url(../images/titbg.png) no-repeat}
 .tit1{background-position:0 0}
 .tit2{background-position:0 -52px}
@@ -325,7 +325,7 @@ a:hover img{border-color:#D12B34}
 .fixnavbg{background:url(../images/fixnav.png) no-repeat;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(enabled=true,sizingMethod=scale,src="images/fixnav.png");_background:none;width:131px;height:437px;overflow:hidden}
 .fixitem{float:left;width:76px;height:298px;overflow:hidden;margin:139px 0 0 12px;overflow:hidden;display:inline}
 .fixitem li{float:left}
-.fixitem a{float:left;width:76px;height:30px;text-align:center;line-height:30px;overflow:hidden;font-size:14px;color:#fff}
+.fixitem a{float:left;width:76px;height:30px;text-align:center;line-height:30px;overflow:hidden;font-size:14px;color:#fff;position:relative}
 .fixitem a:hover{background:#0588C8;color:#fff;text-decoration:none}
 .fixitem .totop{margin-top:2px;height:28px;overflow:hidden}
 .fixitem .totop a{overflow:hidden;line-height:99}
